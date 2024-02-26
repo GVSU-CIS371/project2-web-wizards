@@ -10,7 +10,9 @@ function generateProductHTML(product: Product): string {
 }
 
 function renderProducts(prods: Product[]): void {
-    // your code
+    const container = document.querySelector('#main-container');
+    container.innerHTML = prods.map(product => generateProductHTML(product)).join('');
+    
 }
 
 function getByCategory(category: string): void {
