@@ -11,16 +11,19 @@ function generateProductHTML(product: Product): string {
 
 function renderProducts(prods: Product[]): void {
     const container = document.querySelector('#main-container');
-    container.innerHTML = prods.map(product => generateProductHTML(product)).join('');
-    
+    if (container) {
+        container.innerHTML = prods.map(product => generateProductHTML(product)).join('');
+    }
 }
 
 function getByCategory(category: string): void {
-    // your code
+    const filteredProducts = products.filter(product => product.category === category);
+    renderProducts(filteredProducts);
 }
 
 function getByRating(minRating: number): void {
-    // your code
+    const ratedProducts = products.filter(product => product.rating >= minRating);
+    renderProducts(ratedProducts)
 }
 
 export { renderProducts, getByCategory, getByRating };
