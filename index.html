@@ -32,12 +32,21 @@
         // Bind click events using .addEventListener to the navigation links. Upon clicking:
 
         // - "Electronics" should display all products categorized as "Electronics."
+        document.querySelector('#electronics').addEventListener('click', () => {
+          renderProducts(getByCategory('Electronics'));
+        });
         // - "Clothing" should display all products categorized as "Clothing."
+        document.querySelector('#clothing').addEventListener('click', () => {
+          renderProducts(getByCategory('Clothing'));
+        });
         // - "Groceries" should display all products categorized as "Groceries."
+        document.querySelector('#groceries').addEventListener('click', () => {
+          renderProducts(getByCategory('Groceries'));
+        });
         // - "Best Seller" should display all products with a rating greater than 4.5.
-
-        
-        // your code
+        document.querySelector('#bestSeller').addEventListener('click', () => {
+          renderProducts(getByRating(4.5));
+        });
       </script>
     </main>
     <footer>
